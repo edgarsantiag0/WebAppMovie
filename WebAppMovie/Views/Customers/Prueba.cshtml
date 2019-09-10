@@ -1,0 +1,36 @@
+﻿@model WebAppMovie.Models.CustomerViewModel
+
+@{
+    var className = Model.Movies.Count > 3 ? "popular" : null;
+}
+
+
+
+<h2 class="@className">@Model.Name @Model.LastName</h2>
+
+Id: @Model.Id
+<p>
+    Edad: @Model.Age
+</p>
+
+@if (Model.Movies.Count() == 0)
+{
+    <p> No hay clientes </p>
+
+}
+else
+{
+    <ul>
+        @foreach (var item in Model.Movies)
+        {
+            <li>@item</li>
+
+        }
+    </ul>
+
+}
+
+
+
+
+
