@@ -10,6 +10,11 @@
 
 @using (Html.BeginForm("Save", "Customers"))
 {
+    @*
+        @Html.ValidationSummary()
+         @Html.ValidationSummary(True, "Por favor corrija los siguientes errores")
+    *@
+
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.Name)
         @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
@@ -17,13 +22,15 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.Customer.Birthdate)
-        @Html.TextBoxFor(m => m.Customer.Birthdate, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.LabelFor(m => m.Customer.MembershipTypeId)
+        @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "Selecciona una membresía", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.MembershipTypeId)
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.Customer.MembershipTypeId)
-        @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "Selecciona una membresía", new { @class = "form-control" })
+        @Html.LabelFor(m => m.Customer.Birthdate)
+        @Html.TextBoxFor(m => m.Customer.Birthdate, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.Birthdate)
     </div>
 
     <div class="checkbox">
@@ -34,8 +41,14 @@
 
 
     @Html.HiddenFor(m => m.Customer.Id)
-    <button type="submit" class="btn btn-primary">Guardar</button>
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>
 
 
 
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
 }

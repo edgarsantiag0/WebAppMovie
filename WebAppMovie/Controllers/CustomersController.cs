@@ -44,6 +44,7 @@ namespace WebAppMovie.Controllers
 
             var viewModel = new CustomerFormViewModel()
             {
+                Customer = new Customer(),
                 MembershipTypes = membershipTypes
             };
 
@@ -53,6 +54,7 @@ namespace WebAppMovie.Controllers
         // El form envia un NewCustomerViewModel
         // Pero MVC hace el binding a Customer
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
             if (!ModelState.IsValid)

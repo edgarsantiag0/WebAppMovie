@@ -20,6 +20,7 @@ namespace WebAppMovie.Models
         public byte MembershipTypeId { get; set; }
 
         [Display(Name = "Fecha de nacimiento")]
+        [Min18YearsIfAMember]
         public DateTime? Birthdate { get; set; }
 
         public MembershipType MembershipType { get; set; }
