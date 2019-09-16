@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -15,6 +16,16 @@ namespace WebAppMovie.Models
 
         public static readonly byte Unknown = 0;
         public static readonly byte PayAsYouGo = 1;
+
+        //[NotMapped]
+        //public string NombreDropdown
+        //{
+        //    get
+        //    {
+        //        return Name + " (" + DiscountRate + ")";
+        //    }
+        //}
+
 
 
     }

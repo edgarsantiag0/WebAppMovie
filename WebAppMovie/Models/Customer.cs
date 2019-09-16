@@ -10,8 +10,9 @@ namespace WebAppMovie.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "")]
         [StringLength(255)]
+        [Display(Name = "Full Name")]
         public string Name { get; set; }
 
         public bool IsSubscribedToNewsletter { get; set; }
