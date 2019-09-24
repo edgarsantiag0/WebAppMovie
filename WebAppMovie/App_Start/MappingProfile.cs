@@ -12,12 +12,12 @@ namespace WebAppMovie.App_Start
     {
         public MappingProfile()
         {
+            // Domain to DTO
             Mapper.CreateMap<Customer, CustomerDto>();
+
+
+            // DTO to Domain
             Mapper.CreateMap<CustomerDto, Customer>();
         }
-
-        
-
-        
     }
 }

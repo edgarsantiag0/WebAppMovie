@@ -29,7 +29,12 @@ namespace WebAppMovie.Controllers
         {
             var model = GetCustomers();
 
-            return View(model);
+            if (User.IsInRole("CanManageCustomers"))
+            {
+                return View("Index", model);
+            }
+
+            return View("IndexReadOnly", model);
         }
 
         private IEnumerable<Customer> GetCustomers()
@@ -38,6 +43,7 @@ namespace WebAppMovie.Controllers
             
         }
 
+        [Authorize(Roles = "CanManageCustomers")] //RoleName.CanManageCustomers
         public ActionResult New()
         {
             var membershipTypes = _context.MembershipTypes.ToList();

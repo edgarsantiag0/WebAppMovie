@@ -21,7 +21,7 @@ namespace WebAppMovie.Dtos
 
         public MembershipType MembershipType { get; set; }
 
-        //        [Min18YearsIfAMember] esta validacion esta hecha en base a Customer y no CustomerDto
+        // [Min18YearsIfAMember] esta validacion esta hecha en base a Customer y no CustomerDto
         public DateTime? Birthdate { get; set; }
     }
 }

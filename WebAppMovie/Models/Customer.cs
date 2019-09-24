@@ -8,9 +8,9 @@ namespace WebAppMovie.Models
 {
     public class Customer
     {
-        public int Id { get; set; }
+        public int Id { get; set; } 
 
-        [Required(ErrorMessage = "")]
+        [Required]
         [StringLength(255)]
         [Display(Name = "Full Name")]
         public string Name { get; set; }

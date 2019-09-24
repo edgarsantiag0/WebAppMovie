@@ -237,3 +237,5 @@ C:\workspace\WebAppMovie\WebAppMovie\bin\System.Web.Http.WebHost.xml
 C:\workspace\WebAppMovie\WebAppMovie\bin\AutoMapper.dll
 C:\workspace\WebAppMovie\WebAppMovie\bin\AutoMapper.xml
 C:\workspace\WebAppMovie\WebAppMovie\obj\Debug\WebAppMovie.Migrations.AddEmpleado.resources
+C:\workspace\WebAppMovie\WebAppMovie\obj\Debug\WebAppMovie.Migrations.SeedUsers.resources
+C:\workspace\WebAppMovie\WebAppMovie\obj\Debug\WebAppMovie.Migrations.AddDrivingLicenseToUser.resources
