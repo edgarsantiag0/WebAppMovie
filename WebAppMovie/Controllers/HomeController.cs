@@ -6,12 +6,11 @@ using System.Web.Mvc;
 
 namespace WebAppMovie.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
-            Console.WriteLine("hola");
-
             return View();
         }
 

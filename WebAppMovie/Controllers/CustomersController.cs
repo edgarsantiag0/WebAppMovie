@@ -25,6 +25,7 @@ namespace WebAppMovie.Controllers
         }
 
         // GET: Customers
+        [OutputCache(Duration = 50)]
         public ActionResult Index()
         {
             var model = GetCustomers();

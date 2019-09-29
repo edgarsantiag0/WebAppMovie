@@ -14,10 +14,9 @@ namespace WebAppMovie
                         "~/scripts/bootbox.js",
                         "~/Scripts/respond.js",
                         "~/scripts/datatables/jquery.datatables.js",
-                        "~/scripts/datatables/datatables.bootstrap.js"
-                        //,
-                       // "~/scripts/typeahead.bundle.js",
-                       // "~/scripts/toastr.js"
+                        "~/scripts/datatables/datatables.bootstrap.js",
+                        "~/scripts/typeahead.bundle.js",
+                        "~/scripts/toastr.js"
                       ));
 
 

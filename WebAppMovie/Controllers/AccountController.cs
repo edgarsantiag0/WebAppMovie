@@ -164,10 +164,16 @@ namespace WebAppMovie.Controllers
                 {
                     //// INICIO CODIGO TEMPORAL
 
-                    //var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
-                    //var roleManager = new RoleManager<IdentityRole>(roleStore);
-                    //await roleManager.CreateAsync(new IdentityRole("CanManageCustomers"));
-                    //await UserManager.AddToRoleAsync(user.Id, "CanManageCustomers");
+                    var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
+                    var roleManager = new RoleManager<IdentityRole>(roleStore);
+                    await roleManager.CreateAsync(new IdentityRole("CanManageCustomers"));
+                    await UserManager.AddToRoleAsync(user.Id, "CanManageCustomers");
+
+
+                    // Usuarios
+                    // Lista de usuarios (asignar rol)
+                    // Lista de roles
+                    
 
                     //// FIN CODIGO TEMPORAL
 

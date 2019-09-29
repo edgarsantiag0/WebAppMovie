@@ -213,7 +213,6 @@ C:\workspace\WebAppMovie\WebAppMovie\bin\Microsoft.Owin.Security.Twitter.xml
 C:\workspace\WebAppMovie\WebAppMovie\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\workspace\WebAppMovie\WebAppMovie\bin\Microsoft.Owin.Security.OAuth.xml
 C:\workspace\WebAppMovie\WebAppMovie\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\workspace\WebAppMovie\WebAppMovie\obj\Debug\WebAppMovie.csprojAssemblyReference.cache
 C:\workspace\WebAppMovie\WebAppMovie\obj\Debug\WebAppMovie.Migrations.InitialModel.resources
 C:\workspace\WebAppMovie\WebAppMovie\obj\Debug\WebAppMovie.Migrations.IsSubscribedToCustomer.resources
 C:\workspace\WebAppMovie\WebAppMovie\obj\Debug\WebAppMovie.Migrations.AddMembershipType.resources
@@ -239,3 +238,7 @@ C:\workspace\WebAppMovie\WebAppMovie\bin\AutoMapper.xml
 C:\workspace\WebAppMovie\WebAppMovie\obj\Debug\WebAppMovie.Migrations.AddEmpleado.resources
 C:\workspace\WebAppMovie\WebAppMovie\obj\Debug\WebAppMovie.Migrations.SeedUsers.resources
 C:\workspace\WebAppMovie\WebAppMovie\obj\Debug\WebAppMovie.Migrations.AddDrivingLicenseToUser.resources
+C:\workspace\WebAppMovie\WebAppMovie\obj\Debug\WebAppMovie.Migrations.AddDateToMovie.resources
+C:\workspace\WebAppMovie\WebAppMovie\obj\Debug\WebAppMovie.Migrations.AddRentals.resources
+C:\workspace\WebAppMovie\WebAppMovie\obj\Debug\WebAppMovie.csprojAssemblyReference.cache
+C:\workspace\WebAppMovie\WebAppMovie\bin\Elmah.dll
