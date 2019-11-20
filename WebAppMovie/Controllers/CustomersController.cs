@@ -18,14 +18,15 @@ namespace WebAppMovie.Controllers
         {
             _context = new ApplicationDbContext();
         }
-
+        
         protected override void Dispose(bool disposing)
         {
             _context.Dispose(); // libera los recursos
         }
 
         // GET: Customers
-        [OutputCache(Duration = 50)]
+        //[OutputCache(Duration = 50)]
+        [Authorize]
         public ActionResult Index()
         {
             var model = GetCustomers();
@@ -40,11 +41,10 @@ namespace WebAppMovie.Controllers
 
         private IEnumerable<Customer> GetCustomers()
         {
-            return _context.Customers.Include(c => c.MembershipType).ToList();
-            
+            return _context.Customers.Include(c => c.MembershipType).ToList(); 
         }
 
-        [Authorize(Roles = "CanManageCustomers")] //RoleName.CanManageCustomers
+        [Authorize(Roles = RoleName.CanManageCustomers)] 
         public ActionResult New()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
@@ -165,6 +165,10 @@ namespace WebAppMovie.Controllers
             var customer = _context.Customers
                 .Include(c => c.MembershipType)
                 .SingleOrDefault(c => c.Id == id);
+
+            // _context.Customers.Find(id)
+
+
 
             if (customer == null)
                 return HttpNotFound();

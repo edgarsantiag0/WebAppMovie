@@ -23,7 +23,7 @@ namespace WebAppMovie.Models
         public DbSet<Rental> Rentals { get; set; }
 
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("DefaultConnection2", throwIfV1Schema: false)
         {
         }
 

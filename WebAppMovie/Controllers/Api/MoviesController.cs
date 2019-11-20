@@ -27,9 +27,12 @@ namespace WebAppMovie.Controllers.Api
             if (!String.IsNullOrWhiteSpace(query))
                 moviesQuery = moviesQuery.Where(m => m.Name.Contains(query));
 
-            return moviesQuery
+            var movies = moviesQuery
                 .ToList()
                 .Select(Mapper.Map<Movie, MovieDto>);
+
+
+            return movies;
         }
 
         public IHttpActionResult GetMovie(int id)
@@ -50,6 +53,8 @@ namespace WebAppMovie.Controllers.Api
                 return BadRequest();
 
             var movie = Mapper.Map<MovieDto, Movie>(movieDto);
+
+            movie.NumberAvailable = movie.NumberInStock;
             _context.Movies.Add(movie);
             _context.SaveChanges();
 

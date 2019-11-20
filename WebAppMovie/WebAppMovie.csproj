@@ -257,6 +257,14 @@
     <Compile Include="Migrations\201909270233460_AddRentals.Designer.cs">
       <DependentUpon>201909270233460_AddRentals.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911070034338_AddLastNameToCustomer.cs" />
+    <Compile Include="Migrations\201911070034338_AddLastNameToCustomer.Designer.cs">
+      <DependentUpon>201911070034338_AddLastNameToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911070051128_DeleteLastName.cs" />
+    <Compile Include="Migrations\201911070051128_DeleteLastName.Designer.cs">
+      <DependentUpon>201911070051128_DeleteLastName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -407,6 +415,7 @@
     <Content Include="Content\DataTables\css\common.scss" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
@@ -533,6 +542,9 @@
     <Content Include="Views\Movies\MovieForm.cshtml" />
     <Content Include="Views\Movies\ReadOnlyList.cshtml" />
     <Content Include="Views\Rentals\New.cshtml" />
+    <None Include="Web.Production.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
     <None Include="Web.Testing.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -596,6 +608,12 @@
     <EmbeddedResource Include="Migrations\201909270233460_AddRentals.resx">
       <DependentUpon>201909270233460_AddRentals.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911070034338_AddLastNameToCustomer.resx">
+      <DependentUpon>201911070034338_AddLastNameToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911070051128_DeleteLastName.resx">
+      <DependentUpon>201911070051128_DeleteLastName.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -607,6 +625,15 @@
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Production|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
