@@ -24,6 +24,8 @@ namespace WebAppMovie.Controllers.Api
             var movies = _context.Movies.Where(
                 m => newRental.MovieIds.Contains(m.Id)).ToList();
 
+            // SELECT * FROM MOVIES WHERE ID IN (1,2,3,4)
+
             foreach (var movie in movies)
             {
                 if (movie.NumberAvailable == 0)
