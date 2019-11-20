@@ -17,7 +17,7 @@ INSERT INTO [dbo].[AspNetUserRoles] ([UserId], [RoleId]) VALUES (N'bb9d633d-04b0
 INSERT INTO [dbo].[AspNetUserRoles] ([UserId], [RoleId]) VALUES (N'cdfeb6e1-2432-4bfb-8d69-d97f3910c131', N'7add59e3-4c34-4c58-b637-7386589cb5d1')
 
 ");
-        }
+        } 
         
         public override void Down()
         {
