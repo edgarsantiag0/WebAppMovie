@@ -14,38 +14,31 @@
         <tr>
             <th>Movie</th>
             <th>Genre</th>
-            <th>Delete</th>
+            <th>Acciones</th>
         </tr>
     </thead>
-    <tbody></tbody>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(item.Name, "Details", "Movies", new { id = item.Id }, null)</td>
+                <td>@item.Genre.Name</td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", "Movies", new { id = item.Id }, null)
+                    <button data-customer-id="@item.Id" class="btn-link js-delete">Delete</button>
+                </td>
+            </tr>
+        }
+
+
+    </tbody>
 </table>
 @section scripts
 {
     <script>
         $(document).ready(function () {
-            var table = $("#movies").DataTable({
-                ajax: {
-                    url: "/api/movies",
-                    dataSrc: ""
-                },
-                columns: [
-                    {
-                        data: "name",
-                        render: function(data, type, movie) {
-                            return "<a href='/movies/edit/" + movie.id + "'>" + movie.name + "</a>";
-                        }
-                    },
-                    {
-                        data: "genre.name"
-                    },
-                    {
-                        data: "id",
-                        render: function(data) {
-                            return "<button class='btn-link js-delete' data-movie-id=" + data + ">Delete</button>";
-                        }
-                    }
-                ]
-            });
+            var table = $("#movies").DataTable();
 
 
             $("#movies").on("click", ".js-delete", function () {

@@ -15,6 +15,8 @@ namespace WebAppMovie.Models
         [Display(Name = "Full Name")]
         public string Name { get; set; }
 
+      //  public string LastName { get; set; }
+
         public bool IsSubscribedToNewsletter { get; set; }
 
         [Display(Name = "Tipo de membresía")]
@@ -26,4 +28,6 @@ namespace WebAppMovie.Models
 
         public MembershipType MembershipType { get; set; }
     }
+
+
 }

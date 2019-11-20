@@ -15,7 +15,10 @@ namespace WebAppMovie
     {
         protected void Application_Start()
         {
+            //Agregar mapping profile
             Mapper.Initialize(c => c.AddProfile<MappingProfile>());
+
+
             GlobalConfiguration.Configure(WebApiConfig.Register);
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
